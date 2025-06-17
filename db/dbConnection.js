@@ -7,16 +7,16 @@ connectToDatabase = async () => {
   }
   try {
     await mongoose
-    .connect(`${mongoURI}/Ezimax`, {
-      useNewUrlParser: true,
-      serverSelectionTimeoutMS: 10000,
-    })
-    .then(() => {
-      console.log("DB is connected successfully");
-    })
+      .connect(`${mongoURI}/Ezimax`, {
+        useNewUrlParser: true,
+        serverSelectionTimeoutMS: 10000,
+      })
+      .then(() => {
+        console.log("DB is connected successfully");
+      });
   } catch (err) {
     console.log("Error encounterd while connecting to Database", err.message);
-      process.exit(1);
+    process.exit(1);
   }
 };
 

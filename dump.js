@@ -317,7 +317,7 @@ businessProductSchema.pre("save", function (next) {
   const productNameSlug = this.productName.split(/\s+/).join("-").toLowerCase();
  
   // Set productUrl
-  this.productUrl = /product/${productNameSlug}?pid=${this._id};
+  this.productUrl = `/product/${productNameSlug}?pid=${this._id}`;
  
   // Set variant URLs if they exist
   if (this.variantDetails && this.variantDetails.variants) {
@@ -427,4 +427,5 @@ let vendorProductCollectionsSchema = new Schema( {
       Collections: [collectionDetailSchema],
  
 }, { collection: "vendorProductCollections" , timestamps: true });
+
 module.exports = vendorProductCollectionsSchema;
